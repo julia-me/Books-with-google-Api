@@ -23,7 +23,8 @@ const Book =(props) => {
             onClick={showBooklHendle}
             >
             <h1> {title} </h1>
-            <img className="book-element-img" src={imageLinks.smallThumbnail} alt="book"/>
+            {imageLinks ? <img className="book-element-img" src={imageLinks.smallThumbnail} alt="book"/> : <div className="book-no-img">  {title} </div>  }
+            {/* <img className="book-element-img" src={imageLinks ? imageLinks.smallThumbnail : <div className="book-no-img">  {title} </div> } alt="book"/> */}
             <p>  {authors ?  "Author: " + authors.join(', ') : 'no author'} </p>
             <p> {pageCount ?  "Pages: " + pageCount + ' pg.' : 'no information about page count'}  </p>
             </Link>
@@ -32,3 +33,4 @@ const Book =(props) => {
 }
 
 export default Book
+

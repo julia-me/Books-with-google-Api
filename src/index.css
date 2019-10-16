@@ -31,3 +31,10 @@ a{
   width: 100%;
   margin: 50px 0;
 }
+
+.loading{
+  font-size: 36px;
+  font-weight: bold;
+  color: rgb(209, 116, 132);
+  margin-bottom: 70px;
+}

@@ -41,12 +41,13 @@ const ShowBook =(props) => {
                     <ButtonElem  clasBtn={"book-content-close-btn"}> go to Main Page</ButtonElem> 
                 </Link>
                 <h1> Book: {title} </h1>
-
+                {imageLinks &&  
                 <Slider>
-                {imgArr.map((img, index) => <div key={index}>
-                    <img src={img} alt="book1"/>
-                </div>)}
-                </Slider>
+                    {imgArr.map((img, index) => <div key={index}>
+                        <img src={img} alt="book1"/>
+                    </div>)}
+                </Slider>}
+
 
                 {/* {imageLinks && 
                 <div className="book-content-slider">
