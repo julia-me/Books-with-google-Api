@@ -1,0 +1,27 @@
+.book-element{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px;
+    border: 1px solid black;
+    margin-bottom: 30px;
+    align-items: center;
+
+    &-img {
+        width: 200px;
+        // height: 310px;
+    }
+}
+
+@media screen and (min-width: 768px){
+    .book-element{
+        width: 45%;
+    }
+}
+
+@media screen and (min-width: 1024px){
+    .book-element{
+        width: 30%;
+    }
+}

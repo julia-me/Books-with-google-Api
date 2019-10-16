@@ -1,0 +1,53 @@
+.book{
+    // position: fixed;
+    // width: 100%;
+    // height: 100%;
+    // top: 0;
+    // left: 0;
+    background:#fff;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+    &-content{
+        &-close-btn{
+            background: #cecbcb;
+            font-size: 26px;
+            padding: 10px;
+            border: 1px solid grey;
+        }
+
+        &-slider {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 250px;
+
+            button {
+                background: rgb(195, 195, 233);
+                border: 1px solid grey;
+                padding: 10px;
+            }
+        }
+    }
+    &-info{
+        color: #629fc9;
+    }
+}
+
+@media screen and (min-width: 768px){
+    .book{
+        &-content{
+            max-width: 600px;
+            top: 70px;
+        }
+    }
+}
+
+@media screen and (min-width: 1024px){
+    .book{
+        &-content{
+            width: 700px;
+        }
+    }
+}
