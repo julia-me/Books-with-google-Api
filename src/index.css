@@ -38,3 +38,11 @@ a{
   color: rgb(209, 116, 132);
   margin-bottom: 70px;
 }
+
+.btn-add-to-favoutite{
+  border: 1px solid black;
+  background: rgb(192, 186, 218);
+  font-size: 20px;
+  padding: 5px;
+  margin: 20px 0;
+}

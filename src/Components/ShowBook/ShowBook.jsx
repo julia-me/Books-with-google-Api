@@ -25,8 +25,6 @@ const ShowBook =(props) => {
         infoLink,
     } = props.currentBook;
 
-    // const [showImg, setShowImg]=useState(true)
-
     const imgArr =[]
     const imgs = () => {
         for (let keys in imageLinks) {
@@ -37,26 +35,14 @@ const ShowBook =(props) => {
 
     return (
         <div className="book">
-                <Link to='/'> 
-                    <ButtonElem  clasBtn={"book-content-close-btn"}> go to Main Page</ButtonElem> 
-                </Link>
                 <h1> Book: {title} </h1>
                 {imageLinks &&  
                 <Slider>
                     {imgArr.map((img, index) => <div key={index}>
                         <img src={img} alt="book1"/>
                     </div>)}
-                </Slider>}
-
-
-                {/* {imageLinks && 
-                <div className="book-content-slider">
-                    <ButtonElem onClickHendle={()=> setShowImg(!showImg)}> prev</ButtonElem >
-                {showImg && <img src={imageLinks.smallThumbnail} alt="book1"/>}
-                {!showImg && <img src={imageLinks.thumbnail} alt="book2"/> }
-                    <ButtonElem onClickHendle={()=> setShowImg(!showImg)}> next</ButtonElem>
-                </div>}                              */}
-
+                </Slider>
+                }
                 {authors &&        <p> Author: {authors.join(', ')} </p>}
                 {pageCount &&      <p> Pages: {pageCount} pg. </p>}
                 {averageRating &&  <p> Rating: {averageRating}  </p>}
@@ -75,7 +61,10 @@ const ShowBook =(props) => {
                 {printType &&     <p> printType: {printType} </p>}
                 {publishedDate && <p> published date: {publishedDate} </p>}
                 {publisher &&     <p> publisher: {publisher} </p> }
-                {infoLink &&     <p> Info: <a href={infoLink} className="book-info"> {infoLink} </a> </p> }
+                {infoLink &&     <p> Info: <a href={infoLink}  rel="noopener noreferrer" className="book-info" target="_blank"> {infoLink} </a> </p> }
+                <Link to='/'> 
+                    <ButtonElem  clasBtn={"book-content-close-btn"}> go to Main Page</ButtonElem> 
+                </Link>
         </div>
     )
 }

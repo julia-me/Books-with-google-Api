@@ -32,6 +32,40 @@
     font-size: 25px;
 }
 
+.books-search{
+    width: 100%;
+    margin-bottom: 20px;
+
+    input{
+        width: 250px;
+        padding: 10px 5px; 
+        border: 1px solid rgb(209, 107, 170);
+        margin-right: 30px; 
+        font-size: 18px;
+    }
+
+    label{
+        margin-right: 10px;
+        text-transform: uppercase;
+    }
+    select{
+        width: 40px;
+        height: 30px;
+        border: 1px solid rgb(209, 107, 170);
+        margin-right: 20px;
+    }
+    button{
+        padding: 10px 5px;
+        border: 1px solid rgb(209, 107, 170);
+        text-transform: uppercase;
+        font-weight: 600;
+    }
+}
+
+.border{
+    border-color: red;
+}
+
 @media screen and (min-width: 768px){
     .book-element{
         width: 45%;
@@ -41,5 +75,6 @@
 @media screen and (min-width: 1024px){
     .book-element{
         width: 30%;
+        min-height: 550px;
     }
 }

@@ -3,25 +3,31 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  padding: 40px 15px;
-
+  /* padding: 0 15px 40px 15px; */
 }
 
 /* .App-logo {
   height: 40vmin;
-}
+}*/
 
-.App-header {
+.header {
   background-color: #282c34;
-  min-height: 100vh;
+  width: 100%;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  justify-content: space-around;
+  font-size: 30px;
   color: white;
+  list-style: none;
+  padding: 30px 0;
+  margin: 0;
 }
 
-.App-link {
+/* .header> li{
+  margin-right: 20px;
+} */
+
+/*.App-link {
   color: #09d3ac;
 } */
+
