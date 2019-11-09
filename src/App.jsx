@@ -1,24 +1,24 @@
 import React, {useState, useEffect} from 'react';
-import './App.css';
-import Book from './Components/Books/Book'
-import ShowBook from './Components/ShowBook/ShowBook'
+import Book from './Components/Books/Book';
+import ShowBook from './Components/ShowBook/ShowBook';
 import {
   BrowserRouter as Router,
   Route,
   Link
 } from "react-router-dom";
 import BookService from './services/BookService';
+import './App.css';
 const bookService = new BookService();
 
 
 function App () {
-  const [books, setBooks] = useState([])
-  const [favBooksArr, setFavBooks] = useState(JSON.parse(localStorage.getItem('favBooksArr')) ? JSON.parse(localStorage.getItem('favBooksArr')) : [])
-  const [currentBook, setCurrentBook] = useState({...books[0]})
-  const [loading, setLoading] = useState(true)
-  const [inputVal, setInputValue] = useState('')
-  const [selectVal, setSelectVal] = useState('1')
-  const [fav, satFav] = useState(true)
+  const [books, setBooks] = useState([]);
+  const [favBooksArr, setFavBooks] = useState(JSON.parse(localStorage.getItem('favBooksArr')) ? JSON.parse(localStorage.getItem('favBooksArr')) : []);
+  const [currentBook, setCurrentBook] = useState({...books[0]});
+  const [loading, setLoading] = useState(true);
+  const [inputVal, setInputValue] = useState('');
+  const [selectVal, setSelectVal] = useState('1');
+  const [fav, satFav] = useState(true);
 
 
   useEffect(() => { 
@@ -26,23 +26,23 @@ function App () {
       setBooks(res.data.items)
       setLoading(false)
       console.log(fav)
-    })
-  }, [selectVal, favBooksArr])
+    });
+  }, [selectVal, favBooksArr]);
 
-  const getBooksByNameHandle =() => {
+  const getBooksByNameHandler =() => {
     bookService.getBooksByName(inputVal, selectVal).then( res => {
       setBooks(res.data.items)
     })
-  }
+  };
 
   const showBooks = books.map((book, index)=> {
     book= book.volumeInfo
     return <Book key= {book.title+ index + book.infoLink} data={book} setCurrentBook={setCurrentBook} btnTitle={'add to favourite'} action={'add'} favBooksArr={favBooksArr} setFavBooks={setFavBooks} setBooks={setBooks}satFav={satFav}/>
-  })
+  });
 
   const showFavBooks = favBooksArr.map( (book, index)=> {
     return <Book  key= {book.title+ index + book.publishedDate} data={book} setCurrentBook={setCurrentBook} btnTitle={'remove from favourite'} action={'remove'} fav={fav} satFav={satFav} favBooksArr={favBooksArr} setFavBooks={setFavBooks} setBooks={setBooks}/>
-  })
+  });
 
   const loadingHeandle = () => {
     return(
@@ -51,15 +51,15 @@ function App () {
         <img src="https://loading.io/spinners/double-ring/lg.double-ring-spinner.gif" alt=""/>
       </div>
     )
-  }
+  };
 
   const notActive = () => {
     satFav(true);
-  }
+  };
 
   const isActive = () => {
     satFav(false);
-  }
+  };
 
   return (
     <Router>
@@ -84,7 +84,7 @@ function App () {
               <option value="4">4</option>
               <option value="5">5</option>
             </select>
-            <button onClick={getBooksByNameHandle}> find book </button>
+            <button onClick={getBooksByNameHandler}> find book </button>
           </div>
           {loading && loadingHeandle()}
           {showBooks}
@@ -100,10 +100,7 @@ function App () {
     </div>
   </Router>
   )
-}
-
-
-
+};
 
 export default App;
 

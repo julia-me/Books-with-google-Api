@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
-import './Book.scss'
 import {Link} from "react-router-dom";
+import './Book.scss';
 
 const Book =(props) => {
     const {
@@ -9,16 +9,16 @@ const Book =(props) => {
         pageCount,
         imageLinks,
     } = props.data
-    const {favBooksArr, setFavBooks }= props
-    const index = favBooksArr.findIndex(book => book.title === props.data.title && book.pageCount ===props.data.pageCount)
-    const [btnName, setBtnName]= useState()
+    const {favBooksArr, setFavBooks }= props;
+    const index = favBooksArr.findIndex(book => book.title === props.data.title && book.pageCount ===props.data.pageCount);
+    const [btnName, setBtnName]= useState();
 
-    const showBooklHendle  =() => {
+    const showBooklHendler  =() => {
         const {setCurrentBook} = props;
-        setCurrentBook(props.data)
+        setCurrentBook(props.data);
     }
 
-    const whatMeDoHandle =() => {
+    const whatMeDoHandler =() => {
         switch(props.action){
             case 'add':
                 if(!favBooksArr.length ||  index === -1){
@@ -41,7 +41,7 @@ const Book =(props) => {
             default:
                 console.log( 'default')
         }
-    }
+    };
 
     return (
         <div className={!props.fav ? 'book-element': 'book-element border'}>
@@ -49,16 +49,16 @@ const Book =(props) => {
             to={{
                 pathname: `/book/${title}`,
               }}
-            onClick={showBooklHendle}
+            onClick={showBooklHendler}
             >
             <h1> {title} </h1>
             {imageLinks ? <img className="book-element-img" src={imageLinks.smallThumbnail} alt="book"/> : <div className="book-no-img">  {title} </div>  }
             <p>  {authors ?  "Author: " + authors.join(', ') : 'no author'} </p>
             <p> {pageCount ?  "Pages: " + pageCount + ' pg.' : 'no information about page count'}  </p>
             </Link>
-            <button onClick={(e)=> whatMeDoHandle()} className="btn-add-to-favoutite"> {btnName ? btnName : props.btnTitle} </button>
+            <button onClick={(e)=> whatMeDoHandler()} className="btn-add-to-favoutite"> {btnName ? btnName : props.btnTitle} </button>
         </div>
-    )
+    );
 }
 
 export default Book

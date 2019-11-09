@@ -5,6 +5,6 @@ const ButtonElem = (props) => {
     return (
         <button className={clasBtn} onClick={onClickHendle}> {children} </button>
     )
-}
+};
 
 export default ButtonElem

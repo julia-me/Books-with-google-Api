@@ -1,11 +1,10 @@
 import React from 'react';
-import './ShowBook.scss'
-import ButtonElem from '../../Elements/ButtonElem'
-import Slider from 'react-animated-slider';
-import 'react-animated-slider/build/horizontal.css';
-import './Slider.scss'
 import { Link } from 'react-router-dom';
-
+import ButtonElem from '../../Elements/ButtonElem';
+import Slider from 'react-animated-slider';
+import './ShowBook.scss';
+import 'react-animated-slider/build/horizontal.css';
+import './Slider.scss';
 
 const ShowBook =(props) => {
     const {
@@ -25,13 +24,13 @@ const ShowBook =(props) => {
         infoLink,
     } = props.currentBook;
 
-    const imgArr =[]
+    const imgArr =[];
     const imgs = () => {
         for (let keys in imageLinks) {
             imgArr.push(imageLinks[keys])
         }
-    }
-    imgs()
+    };
+    imgs();
 
     return (
         <div className="book">
